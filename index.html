@@ -346,6 +346,77 @@ footer p { margin: 10px; }
     .gallery { grid-template-columns: 1fr; max-width: 280px; }
     .photo-placeholder,.photo-card img { height: 190px; }
 }
+
+/* BEAUTIFUL ALIGNED PHOTO GALLERY */
+
+.gallery {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto !important;
+    padding: 0 10px;
+    justify-items: center;
+    align-items: start;
+}
+
+.photo-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 8px 30px #d96b9120;
+    text-align: center;
+    margin: 0;
+}
+
+.photo-card img,
+.photo-placeholder {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.photo-card p {
+    font-size: 18px;
+    padding: 15px 5px 8px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 600px;
+        gap: 18px;
+    }
+
+    .photo-card img,
+    .photo-placeholder {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        max-width: 340px;
+        margin: 35px auto !important;
+        gap: 22px;
+    }
+
+    .photo-card {
+        max-width: 320px;
+    }
+
+    .photo-card img,
+    .photo-placeholder {
+        height: 230px;
+    }
+}
+    
 </style>
 </head>
 
@@ -409,22 +480,25 @@ footer p { margin: 10px; }
         <input type="file" id="photoUpload" accept="image/*" multiple hidden>
     </label>
     <div class="gallery" id="gallery">
-     <div class="photo-card">
-    <img src="IMG-20250724-WA0320.jpg" alt="Our memory">
-    <p>Beautiful Moments 💗</p>
+     
+<div class="gallery" id="gallery">
+
     <div class="photo-card">
-    <img src="file_00000000560c821197da7621604bd98b.png" alt="Our memory">
-    <p>Beautiful Moments 💗</p>
+        <img src="IMG-20250724-WA0320.jpg" alt="Memory 1">
+        <p>Beautiful Moments 💗</p>
     </div>
+
     <div class="photo-card">
-    <img src="Snapchat-1477086167.jpg" alt="Our memory">
-    <p>Beautiful Moments 💗</p>
+        <img src="Snapchat-1477086167.jpg" alt="Memory 2">
+        <p>Sweet Memories 🌸</p>
     </div>
 
-
-
-     </div>
+    <div class="photo-card">
+        <img src="file_000000000560c821197da7.jpg" alt="Memory 3">
+        <p>Forever Special 💕</p>
     </div>
+
+</div>
 </section>
 
 <section class="surprise-section">
